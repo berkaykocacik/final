@@ -22,6 +22,9 @@
                 if(el.valueAsNumber > 100 || el.valueAsNumber < 0){
                     st = true;
                 }
+                if(el.value == ""){
+                    st = true;
+                }
             });
             if(st){
                 alert("girdiğiniz değerler 0-100 arası olmalı");
@@ -29,10 +32,10 @@
                 let fscore = ((59.5 - ((inps[0].valueAsNumber*0.14286+inps[1].valueAsNumber*0.22024+inps[2].valueAsNumber*0.25595+inps[3].valueAsNumber*0.2123+inps[4].valueAsNumber*0.16865)*0.6))/0.4);
                 let sp = document.querySelector("span");
                 if(fscore < 0){
-                    alert("finale girmene gerek yok");
+                    alert("Geçtin, finale girmene gerek yok");
                     sp.innerHTML = "-";
                 }else if(fscore > 100){
-                    alert("100 alsan bile geçemezsin");
+                    alert("Maalesef 100 alsan bile geçemezsin");
                     sp.innerHTML = "-";
                 }else{
                     sp.innerHTML = fscore.toFixed(1);
