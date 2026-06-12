@@ -6,7 +6,39 @@
     <title>Final</title>
 </head>
 <body>
-    <h1>Merhaba Dünya!</h1>
     <p><b>Kurul 1: </b><input type="number" value="0"></p>
+    <p><b>Kurul 2: </b><input type="number" value="0"></p>
+    <p><b>Kurul 3: </b><input type="number" value="0"></p>
+    <p><b>Kurul 4: </b><input type="number" value="0"></p>
+    <p><b>Kurul 5: </b><input type="number" value="0"></p>
+    <button onclick="calc()">Hesapla</button>
+    <p><b>Final: <span>0</span></b></p>
 </body>
+    <script>
+        function calc(){
+            let per = [14.286,22.024,25.595,21.23,16.865];
+            let inps = document.querySelectorAll("input");
+            let score = 0;
+            let st = false;
+            for(let i=5;i<5;i++){
+                let val = inps[i].value;
+                if(val > 100 || val < 0){
+                    st = true;
+                    break;
+                }
+                score += val*per[i];
+            }
+            if(st){
+                alert("girdiğiniz değerler 0-100 arası olmalı");
+            }else{
+                let fscore = ((59.5-(score*0.6))/0.4);
+                if(score >= 59.5){
+                    fscore = 0;
+                    alert("finale girmene gerek yok");
+                }else{
+                    document.querySelector("span").innerHTML = fscore;
+                }
+            }
+        }
+    </script>
 </html>
